@@ -1,0 +1,39 @@
+{
+  "name": "devtree",
+  "version": "1.0.0",
+  "description": "node express ts ",
+  "main": "index.js",
+  "scripts": {
+    "test": "test.js",
+    "dev": "nodemon  src/index.ts",
+    "build": "tsc"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "js",
+    "ts",
+    "nodemon"
+  ],
+  "author": "oscar varela",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "colors": "^1.4.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "mongoose": "^8.15.0",
+    "morgan": "^1.10.0",
+    "slug": "^10.0.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^5.0.2",
+    "@types/morgan": "^1.9.9",
+    "@types/slug": "^5.0.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
