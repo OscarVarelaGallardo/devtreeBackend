@@ -5,7 +5,7 @@ import { logger } from '../utils/logger';
 import { hasPassword } from '../utils/auth';
 import { validationResult } from 'express-validator';
 import { verifyPassword } from '../utils/auth'
-import { log } from 'console';
+
 
 export const handleCreatedUser = async (req: Request, res: Response) => {
     let errors = validationResult(req)
@@ -43,8 +43,9 @@ export const handleCreatedUser = async (req: Request, res: Response) => {
 
 export const handleLogin = async (req: Request, res: Response) => {
     const { email, password } = req.body
+ 
     let errors = validationResult(req)
-    if(errors.isEmpty()){
+    if(!errors.isEmpty()){
         res.status(400).json({ code: "400", msg: errors.array })
         logger.error({ code: 400, msg: errors.array })
         return
