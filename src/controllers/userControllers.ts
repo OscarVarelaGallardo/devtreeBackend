@@ -5,6 +5,7 @@ import { logger } from '../utils/logger';
 import { hasPassword } from '../utils/auth';
 import { validationResult } from 'express-validator';
 import { verifyPassword } from '../utils/auth'
+import { generateToken } from '../utils/jwt';
 
 
 export const handleCreatedUser = async (req: Request, res: Response) => {
@@ -43,9 +44,9 @@ export const handleCreatedUser = async (req: Request, res: Response) => {
 
 export const handleLogin = async (req: Request, res: Response) => {
     const { email, password } = req.body
- 
+
     let errors = validationResult(req)
-    if(!errors.isEmpty()){
+    if (!errors.isEmpty()) {
         res.status(400).json({ code: "400", msg: errors.array })
         logger.error({ code: 400, msg: errors.array })
         return
@@ -59,7 +60,9 @@ export const handleLogin = async (req: Request, res: Response) => {
         }
         const findPassword = await verifyPassword(password, user.password)
         if (findPassword) {
-            res.status(200).json({ user })
+            const token = generateToken( {id:user.id})
+            logger.info(token)
+            res.status(200).json({ code: 200, msg: "Iniciando sesión", token })
             return
         } else {
             res.status(401).json({ code: 400, msg: 'Email or Password are invalid' })

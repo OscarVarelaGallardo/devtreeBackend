@@ -23,3 +23,7 @@
 [2025-05-22T22:08:49.661Z] ERROR: [object Object]
 [2025-05-22T22:09:40.216Z] ERROR: [object Object]
 [2025-05-22T22:09:57.343Z] ERROR: [object Object]
+[2025-05-22T22:21:33.753Z] ERROR: Email is not register
+[2025-05-23T05:28:05.985Z] ERROR: invalid expiresIn option for string payload
+[2025-05-23T05:31:15.306Z] ERROR: invalid expiresIn option for string payload
+[2025-05-23T05:33:32.657Z] ERROR: invalid expiresIn option for string payload
